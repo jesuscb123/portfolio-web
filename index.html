@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jesús - Software Developer</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <header>
+        <nav>
+            <div class="logo">Jesús<span>.dev</span></div>
+            <ul class="nav-links">
+                <li><a href="#inicio">Inicio</a></li>
+                <li><a href="#habilidades">Skills</a></li>
+                <li><a href="#proyectos">Proyectos</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="inicio" class="hero">
+        <div class="hero-content" data-aos="fade-up" data-aos-duration="1000">
+            <h1 id="mi-nombre">Hola, soy Jesús</h1>
+            <h2 id="mi-rol">Software Developer</h2>
+            <p>Construyendo soluciones eficientes y escalables.</p>
+            <a href="#contacto" class="btn-primary">Hablemos</a>
+        </div>
+    </section>
+
+    <section id="habilidades" class="skills">
+        <h2 class="section-title" data-aos="fade-right">Mis Skills</h2>
+        <div class="skills-grid">
+            <div class="skill-card" data-aos="zoom-in" data-aos-delay="100">
+                <i class="devicon-kotlin-plain"></i>
+                <p>Kotlin</p>
+            </div>
+            <div class="skill-card" data-aos="zoom-in" data-aos-delay="200">
+                <i class="devicon-java-plain"></i>
+                <p>Java</p>
+            </div>
+            <div class="skill-card" data-aos="zoom-in" data-aos-delay="300">
+                <i class="devicon-python-plain"></i>
+                <p>Python</p>
+            </div>
+            <div class="skill-card" data-aos="zoom-in" data-aos-delay="400">
+                <i class="devicon-spring-original"></i>
+                <p>Spring Boot</p>
+            </div>
+            <div class="skill-card" data-aos="zoom-in" data-aos-delay="500">
+                <i class="devicon-javascript-plain"></i>
+                <p>JavaScript</p>
+            </div>
+            <div class="skill-card" data-aos="zoom-in" data-aos-delay="600">
+                <i class="devicon-html5-plain"></i>
+                <p>HTML5</p>
+            </div>
+            <div class="skill-card" data-aos="zoom-in" data-aos-delay="700">
+                <i class="devicon-css3-plain"></i>
+                <p>CSS3</p>
+            </div>
+            <div class="skill-card" data-aos="zoom-in" data-aos-delay="800">
+                <i class="devicon-postgresql-plain"></i>
+                <p>PostgreSQL</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="proyectos" class="projects">
+        <h2 class="section-title" data-aos="fade-right">Mis Proyectos</h2>
+        <div id="projects-container" class="projects-grid">
+            <p id="cargando-proyectos">Cargando proyectos desde GitHub...</p>
+        </div>
+    </section>
+
+    <section id="contacto" class="contact">
+        <h2 class="section-title" data-aos="fade-right">Contacto</h2>
+        <div class="contact-container" data-aos="fade-up">
+            <form action="https://formsubmit.co/jesusctech.dev@gmail.com" method="POST" class="contact-form">
+                <input type="hidden" name="_captcha" value="false">
+                <input type="hidden" name="_template" value="table">
+                
+                <div class="input-group">
+                    <label for="name">Nombre</label>
+                    <input type="text" id="name" name="name" required placeholder="Tu nombre">
+                </div>
+                <div class="input-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" required placeholder="tu@email.com">
+                </div>
+                <div class="input-group">
+                    <label for="message">Mensaje</label>
+                    <textarea id="message" name="message" rows="5" required placeholder="¿En qué puedo ayudarte?"></textarea>
+                </div>
+                <button type="submit" class="btn-submit">Enviar Mensaje</button>
+            </form>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2026 Jesus<span>.dev</span>. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
