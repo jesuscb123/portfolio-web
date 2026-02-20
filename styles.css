@@ -346,3 +346,71 @@ footer {
     color: var(--accent-color);
     font-weight: 600;
 }
+
+/* --- Modal de Éxito --- */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(11, 19, 43, 0.8); /* Fondo semitransparente oscuro */
+    backdrop-filter: blur(8px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2000;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+}
+
+/* Esta clase se añadirá con JavaScript para mostrar el modal */
+.modal-overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.modal-content {
+    background: var(--bg-secondary);
+    padding: 40px;
+    border-radius: 15px;
+    text-align: center;
+    border: 2px solid var(--accent-color);
+    box-shadow: 0 0 30px rgba(0, 229, 255, 0.2);
+    transform: scale(0.7); /* Empieza más pequeño para la animación */
+    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    max-width: 400px;
+    width: 90%;
+}
+
+.modal-overlay.active .modal-content {
+    transform: scale(1); /* Crece a su tamaño normal */
+}
+
+.success-icon {
+    font-size: 4rem;
+    margin-bottom: 20px;
+    display: inline-block;
+    animation: bounceIcon 1s ease infinite alternate; /* Animación flotante */
+}
+
+@keyframes bounceIcon {
+    0% { transform: translateY(0); }
+    100% { transform: translateY(-10px); }
+}
+
+.modal-content h3 {
+    color: var(--accent-color);
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+}
+
+.modal-content p {
+    color: var(--text-muted);
+    margin-bottom: 25px;
+}
+
+#close-modal {
+    cursor: pointer;
+}

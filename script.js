@@ -83,3 +83,56 @@ async function obtenerProyectos() {
 
 // Llamamos a la función
 obtenerProyectos();
+
+// 4. Lógica para el Formulario de Contacto (AJAX)
+const form = document.querySelector('.contact-form');
+const btnSubmit = document.querySelector('.btn-submit');
+const modal = document.getElementById('success-modal');
+const btnCloseModal = document.getElementById('close-modal');
+
+form.addEventListener('submit', async (e) => {
+    e.preventDefault(); // Evita la redirección a la página de FormSubmit
+    
+    // Cambiamos el texto del botón temporalmente para dar feedback al usuario
+    const textoOriginal = btnSubmit.innerText;
+    btnSubmit.innerText = 'Enviando...';
+    btnSubmit.disabled = true;
+
+    try {
+        const response = await fetch(form.action, {
+            method: 'POST',
+            body: new FormData(form),
+            headers: {
+                'Accept': 'application/json' // Le dice a FormSubmit que responda por detrás, sin redirigir
+            }
+        });
+
+        if (response.ok) {
+            // Mostramos el modal de éxito
+            modal.classList.add('active');
+            // Limpiamos los campos del formulario
+            form.reset();
+        } else {
+            alert("Hubo un problema al enviar el mensaje. Inténtalo de nuevo.");
+        }
+    } catch (error) {
+        console.error("Error al enviar el formulario:", error);
+        alert("Error de conexión. Revisa tu internet y vuelve a intentarlo.");
+    } finally {
+        // Restauramos el botón a la normalidad
+        btnSubmit.innerText = textoOriginal;
+        btnSubmit.disabled = false;
+    }
+});
+
+// Lógica para cerrar el modal al hacer clic en el botón "Cerrar"
+btnCloseModal.addEventListener('click', () => {
+    modal.classList.remove('active');
+});
+
+// Opcional: Cerrar el modal si el usuario hace clic fuera de la tarjeta
+window.addEventListener('click', (e) => {
+    if (e.target === modal) {
+        modal.classList.remove('active');
+    }
+});
